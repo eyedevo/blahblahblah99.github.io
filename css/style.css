@@ -17,12 +17,23 @@
    ========================== */
 body {
     background-color: var(--bg-color);
+    background-image: url(/background.png);
+    animation: movePattern 10s linear infinite;
     color: var(--text-primary);
     font-family: Arial, sans-serif;
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+@keyframes movePattern {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -230px -230px;
+    }
 }
 
 /* Header */
@@ -37,9 +48,20 @@ header {
     z-index: 50;
 }
 
+.logo {
+    display: flex;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    margin-left: 8px;
+}
+
 header h1 {
     font-size: 1.5rem;
     font-weight: bold;
+    line-height: 2;
 }
 
 /* Navigation buttons */
