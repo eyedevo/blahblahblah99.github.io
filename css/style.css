@@ -208,6 +208,22 @@ body.fish-page img { width: 75%; height: auto; }
 
 body.die-page img { width: 50%; height: auto; }
 
+/* 404 page */
+
+.error-container {
+    flex: 1; /* fills remaining space between header and footer */
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 /* ==========================
    Projects Page
    ========================== */
