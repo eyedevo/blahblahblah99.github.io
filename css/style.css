@@ -92,7 +92,7 @@ nav {
 nav a img {
     height: 80px;
     cursor: pointer;
-    transition: transform 0.15s ease, filter 0.15s ease;
+    transition: all 0.15s ease;
 }
 
 nav a img:hover {
@@ -272,16 +272,14 @@ body.project-detail-page {
 }
 
 .project-card {
+    position: relative; /* IMPORTANT */
     display: flex;
-    flex-direction: column; /* keep text below image */
-    width: 500px;           /* wider card for banner images */
+    flex-direction: column;
+    width: 500px;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     background-color: #1e1e1e;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-    color: inherit;
+    transition: all 0.2s ease;
 }
 
 .project-card img {
@@ -298,6 +296,20 @@ body.project-detail-page {
     font-weight: bold;
 }
 
+.project-card .frame {
+    position: absolute;
+    top: -1.5%;
+    left: -1%;
+
+    width: 102%;
+    height: 103%;
+
+    background-image: url('/Projects/frames/frame1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+}
 
 .projects-list a {
     text-decoration: none; /* removes underline */
@@ -307,6 +319,7 @@ body.project-detail-page {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    filter: brightness(1.1);
 }
 
 /* ==========================
