@@ -84,21 +84,20 @@ header h1 {
 /* Navigation buttons */
 nav {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
+    margin-right: 30px;
+    align-items: center;
 }
 
-nav button {
-    background-color: var(--button-bg);
-    color: var(--text-primary);
-    padding: 0.8rem 4rem;
-    border: none;
-    border-radius: 5px;
+nav a img {
+    height: 80px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-nav button:hover {
-    background-color: var(--button-hover);
+nav a img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 /* Footer */
