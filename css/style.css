@@ -103,11 +103,51 @@ nav a img:hover {
 
 /* Footer */
 footer {
+    position: relative;
+    bottom: 0;
+    align-self: center;
     text-align: center;
     padding: 1rem;
     font-size: 0.875rem;
     color: var(--text-secondary);
-    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .logo {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        gap: 1.2rem;          /* tighter spacing */
+        margin-right: 0;      /* remove side offset */
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a img {
+        height: 50px;         /* much more thumb-friendly */
+    }
+
+    footer {
+        font-size: 0.83rem;
+    }
 }
 
 /* ==========================
@@ -157,8 +197,9 @@ p a:visited:hover {
 .cat-container {
     display: flex;
     align-items: center;
-    position: fixed;
-    bottom: 20px;
+    position: relative;
+    width: max-content;
+    bottom: 0px;
     left: 20px;
     gap: 10px;
     cursor: pointer;
@@ -172,14 +213,25 @@ p a:visited:hover {
 }
 
 .cat-text {
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
     color: var(--text-secondary);
     white-space: pre-line;
 }
 
 .cat-gif {
-    width: 125px;
+    width: clamp(80px, 12vw, 125px);
     height: auto;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1.2rem;
+        padding-top: 0;
+    }
+
+    body.home-page main p {
+        font-size: 1rem;
+    }
 }
 
 /* ==========================
@@ -220,11 +272,19 @@ body.fish-page {
 
 .lord-button {
     position: absolute;   /* overlay on the page */
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: none;
     border: none;
+    padding: 0;
+}
+
+.lord-button img {
+    width: clamp(230px, 20vw, 570px);
+    height: auto;
+
+    transition: transform 0.15s ease;
 }
 
 .lord-button:hover {
@@ -289,8 +349,8 @@ body.project-detail-page {
 /* Project list */
 .projects-list {
     display: flex;
-    justify-content: left;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2vh;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
@@ -299,13 +359,13 @@ body.project-detail-page {
 .download-button {
     background-color: #3a3a3a;
     color: #f2f2f2;
-    padding: 1rem 2rem;
+    padding: clamp(0.8rem, 1.2vw, 1rem) clamp(1rem, 2vw, 2rem);
+    /* padding: 1rem 2rem; */
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    white-space: nowrap;
 }
 
 .projects-list a button:hover,
@@ -313,18 +373,12 @@ body.project-detail-page {
     background-color: #5a5a5a;
 }
 
-.projects-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
 .project-card {
     position: relative; /* IMPORTANT */
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: clamp(260px, 30vw, 500px); /* not right i dont think */
+    aspect-ratio: 500 / 345.63; /* ASPECT RATIO OF PROJECT CARD */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     background-color: #1e1e1e;
@@ -333,16 +387,25 @@ body.project-detail-page {
 
 .project-card img {
     width: 100%;    /* full width of the card */
-    height: 300px;  /* shorter than before, more banner-like */
-    object-fit: cover; /* crops nicely if image too tall */
+    aspect-ratio: 5 / 3; /* same as 500x300 */
+    object-fit: cover;
 }
 
-.project-card .project-name {
+.project-name {
     background-color: #3a3a3a;
-    padding: 0.8rem;
-    text-align: center;  /* center the text inside the bar */
-    font-size: 1.1rem;
+    text-align: center;
     font-weight: bold;
+
+    font-size: clamp(0.7rem, 1.2vw, 1.1rem);
+    aspect-ratio: 500 / 45.63;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-card .frame {
