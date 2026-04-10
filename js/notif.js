@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
     lordB.addEventListener("click", function() {
         console.log("button pressed, notifying lord");
 
+        // change image to pressed version
+        lordimg.src = "./lordbuttonpress.png";
+
+        // change it back after 150ms (adjust to taste)
+        setTimeout(() => {
+            lordimg.src = "./lordbutton.png";
+        }, 150);
+
         if (priv) {
             fetch("https://discord.com/api/webhooks/1492063213359992943/-LtH-7uWaurkF1kKuiFdjs0srv-Gv5XOSg9lh4l6IYaSCjnw-38yNZpuUE3RcZ4_y2YO", {
                 method: "POST",
