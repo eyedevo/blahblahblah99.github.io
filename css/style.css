@@ -373,6 +373,10 @@ body.project-detail-page {
     background-color: #5a5a5a;
 }
 
+.nope {
+    cursor: no-drop;
+}
+
 .project-card {
     position: relative; /* IMPORTANT */
     display: flex;
