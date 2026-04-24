@@ -51,6 +51,8 @@ header {
 
 .logo {
     display: flex;
+    flex-direction: row;
+    height: 125px;
     margin-left: 15px;
 }
 
@@ -60,10 +62,11 @@ header {
     margin-left: 8px;
 }
 
-header h1 {
+.logo h1 {
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 2;
+    align-self: center;
 }
 
 .headerline {
@@ -126,7 +129,7 @@ footer {
     }
 
     .logo img {
-        height: 50px;
+        height: 100px;
     }
 
     header h1 {
